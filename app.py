@@ -6,6 +6,7 @@ from models import Usuarios, Gastos
 
 def index():
 
+
     if request.method == 'POST':
         nombre = request.form['nombre']
         apellido = request.form['apellido']
