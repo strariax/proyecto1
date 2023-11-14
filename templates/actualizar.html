@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[url('https://3276114.fs1.hubspotusercontent-na1.net/hubfs/3276114/RG_billetera.png')] bg-center flex-col">
+    <div class="flex align-center">
+        <section class="bg-slate-700 p-6 rounded-md shadow-md ml-52 mt-24">
+            <form class="grid grid-cols-1 gap-4"  method="post">
+
+                <label for="categoria"  class="block text-sm font-medium text-white">Categoria</label>
+                <select name="categoria" id="categoria" class="mt-1 p-2 border border-gray-300 rounded-md w-full"> 
+                    <option value="">Seleccione una categoria</option>
+                    <option value="Transporte"{% if gasto_a_actualizar.categoria == 'Transporte' %} selected {% endif %}>Transporte</option>
+                    <option value="Entretenimiento"{% if gasto_a_actualizar.categoria == 'Entretenimiento' %} selected {% endif %}>Entretenimiento</option>
+                    <option value="Comida"{% if gasto_a_actualizar.categoria == 'Comida' %} selected {% endif %}>Comida</option>
+                    <option value="Educacion"{% if gasto_a_actualizar.categoria == 'Educacion' %} selected {% endif %}>Educacion</option>
+                    <option value="Salud"{% if gasto_a_actualizar.categoria == 'Salud' %} selected {% endif %}>Salud</option>
+                    <option value="Otro"{% if gasto_a_actualizar.categoria == 'Otro' %} selected {% endif %}>Otro</option>
+                </select>
+                <div>
+                    <label for="fecha_de_gasto" class="block text-sm font-medium text-white">Fecha</label>
+                    <input type="date" name="fecha_de_gasto" id="fecha_de_gasto" value="{{gasto_a_actualizar.fecha_de_gasto}}" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                </div>
+                <div>
+                    <label for="monto" class="block text-sm font-medium text-white">Monto</label>
+                    <input type="Integer" name="monto" id="monto" required value="{{gasto_a_actualizar.monto}}" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                </div>
+                <div>
+                    <label for="descripcion" class="block text-sm font-medium text-white">Descripcion</label>
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="5"  class="mt-1 p-2 border border-gray-300 rounded-md w-full">{{gasto_a_actualizar.descripcion}}</textarea>
+                </div>
+
+                <button type="submit" class="border border-dashed border-white mt-2 text-white p-2 rounded-md w-full hover:border-blue-600">Aceptar</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

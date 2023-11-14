@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[url('https://3276114.fs1.hubspotusercontent-na1.net/hubfs/3276114/RG_billetera.png')] bg-center flex-col">
+    <div class="mb-20">
+        <H1 class="font-serif text-5xl text-slate-700 pt-16 pl-40 ">Gestor de Gastos</H1>
+    </div>
+    <div class="flex align-center">
+        <section class="bg-slate-700 p-6 rounded-md shadow-md ml-52">
+            <form action="/" class="grid grid-cols-1 gap-4" method="post">
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-white">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" required class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                </div>
+                <div>
+                    <label for="apellido" class="block text-sm font-medium text-white">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" required class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                </div>
+                <div>
+                    <label for="cedula" class="block text-sm font-medium text-white">Cedula</label>
+                    <input type="Integer" name="cedula" id="cedula" required class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                </div>
+                <div>
+                    <label for="correo" class="block text-sm font-medium text-white">Correo</label>
+                    <input type="text" name="correo" id="correo" required class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                </div>
+                <button type="submit" class="border border-dashed border-white text-white p-2 rounded-md hover:border-blue-600">Registrarme</button>
+            </form>
+            <button class="border border-dashed border-white mt-2 text-white p-2 rounded-md w-full hover:border-blue-600"><a href="/cargar_gastos">Iniciar Sesion</a></button>
+        </section>
+    </div>
+    
+</body>
+</html>

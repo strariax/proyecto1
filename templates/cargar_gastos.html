@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[url('https://3276114.fs1.hubspotusercontent-na1.net/hubfs/3276114/RG_billetera.png')] bg-center flex-col">
+
+    <div class="flex align-center">
+        <section class="bg-slate-700 p-6 rounded-md shadow-md ml-52 mt-24">
+            <form action="/cargar_gastos" class="grid grid-cols-1 gap-4" method="post">
+                <label for="categoria"  class="block text-sm font-medium text-white">Categoria</label>
+                <select name="categoria" id="categoria" class="mt-1 p-2 border border-gray-300 rounded-md w-full"> 
+                    <option value="">Seleccione una categoria</option>
+                    <option value="Transporte">Transporte</option>
+                    <option value="Entretenimiento">Entretenimiento</option>
+                    <option value="Comida">Comida</option>
+                    <option value="Educacion">Educacion</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Otro">Otro</option>
+                </select>
+                <div>
+                    <label for="fecha_de_gasto" class="block text-sm font-medium text-white">Fecha</label>
+                    <input type="date" name="fecha_de_gasto" id="fecha_de_gasto" class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                </div>
+                <div>
+                    <label for="monto" class="block text-sm font-medium text-white">Monto</label>
+                    <input type="Integer" name="monto" id="monto" required class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+                </div>
+                <div>
+                    <label for="descripcion" class="block text-sm font-medium text-white">Descripcion</label>
+                    <textarea name="descripcion" id="descripcion" cols="30" rows="5" class="mt-1 p-2 border border-gray-300 rounded-md w-full"></textarea>
+                </div>
+                <button type="submit" class="border border-dashed border-white text-white p-2 rounded-md hover:border-blue-600">Cargar</button>
+            </form>
+            <button class="border border-dashed border-white mt-2 text-white p-2 rounded-md w-full hover:border-blue-600"><a href="/mostrar_gastos">Mostrar mis gastos</a></button>
+        </section>
+    </div>
+
+</body>
+</html>

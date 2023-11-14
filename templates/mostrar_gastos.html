@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-100 flex-col">
+    <div class="m-20">
+        <table class="table-auto text-white bg-slate-700 p-6 rounded-md shadow-md w-full">
+            <thead class="text-white bg-red-400 w-full"> 
+                <tr>
+                    <div class="flex justify-evenly w-full">
+                        <th  class="py-2 px-4 text-left text-center">Categoria</th>
+                        <th  class="py-2 px-4 text-left text-center">Fecha</th>
+                        <th  class="py-2 px-4 text-left text-center">Monto</th>
+                        <th  class="py-2 px-4 text-left text-center">Descripcion</th>
+                        <th  class="py-2 px-4 text-left text-center">Acciones</th>
+                    </div>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-300">
+                {% for gasto in lista_de_gastos %}
+                <tr class="text-gray-800">
+                    <td class="py-2 px-4 bg-white"> {{gasto.categoria}} </td>
+                    <td class="py-2 px-4 bg-white"> {{gasto.fecha_de_gasto}} </td>
+                    <td class="py-2 px-4 bg-white"> {{gasto.monto}} </td>
+                    <td class="py-2 px-4 bg-white"> {{gasto.descripcion}} </td>
+                    <td class="flex justify-evenly py-2 px-4 bg-white">
+                        <form action="{{url_for('actualizar', gasto_id=gasto.id)}}", method="get">
+                            <button type="submit" class="border border-dashed border-blue-600 mt-2 p-2 rounded-md w-full hover:border-blue-600">Actualizar</button>
+                        </form>
+                    
+                        <form action="/eliminar" method="post">
+                            <input type="hidden" name="gasto_id" value="{{gasto.id}}">
+                            <button type="submit" class="border border-dashed border-blue-600 mt-2 p-2 rounded-md w-full hover:border-blue-600">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html> 
